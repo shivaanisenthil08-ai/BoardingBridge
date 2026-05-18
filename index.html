@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoardingBridge</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+        <h1>BoardingBridge</h1>
+
+        <div>
+            <button onclick="showAbout()">About Us</button>
+            <button onclick="showLogin()">Login</button>
+            <button onclick="showSignup()">Sign Up</button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <h2>Your Journey Starts at BoardingBridge</h2>
+
+        <p>
+            Seamless booking | Real-time schedules |
+            Passenger management
+        </p>
+
+        <button onclick="showLogin()">
+            Book a Flight
+        </button> 
+        <div class="destination-grid">
+
+            <div class="destination-card delhi" onclick="openCityPopup('Delhi')">
+                <h3>Delhi</h3>
+            </div>
+        
+            <div class="destination-card mumbai" onclick="openCityPopup('Mumbai')">
+                <h3>Mumbai</h3>
+            </div>
+            
+            <div class="destination-card bangalore" onclick="openCityPopup('Bangalore')">
+                <h3>Bangalore</h3>
+            </div>
+            
+            <div class="destination-card hyderabad" onclick="openCityPopup('Hyderabad')">
+                <h3>Hyderabad</h3>
+            </div>
+            
+            <div class="destination-card tokyo" onclick="openCityPopup('Tokyo')">
+                <h3>Tokyo</h3>
+            </div>
+            
+            <div class="destination-card dubai" onclick="openCityPopup('Dubai')">
+                <h3>Dubai</h3>
+            </div>
+            
+            <div class="destination-card singapore" onclick="openCityPopup('Singapore')">
+                <h3>Singapore</h3>
+            </div>
+            
+            <div class="destination-card london" onclick="openCityPopup('London')">
+                <h3>London</h3>
+            </div>
+        
+        </div>
+
+    </section>
+
+</section>
+
+<section id="aboutPage" class="about-section hidden">
+
+    <button class="back-btn" onclick="goHome()">← Back</button>
+    <h2>About BoardingBridge</h2>
+
+<p>
+    BoardingBridge Airlines is a modern airline reservation and passenger
+    management platform designed to provide a smooth, premium, and
+    technology-driven travel experience for both domestic and international
+    passengers.
+</p>
+
+<p>
+    The platform allows passengers to search flights, compare schedules,
+    choose travel classes, select seats interactively, and confirm bookings
+    through a clean and user-friendly interface inspired by global airline systems.
+</p>
+
+<p>
+    BoardingBridge currently connects Chennai with major destinations including
+    Mumbai, Delhi, Bangalore, Hyderabad, Dubai, Singapore, London, Paris,
+    New York, Tokyo, and Sydney.
+</p>
+
+<p>
+    Passengers can explore Economy, Business, and First Class travel options
+    with real-time flight availability, dynamic pricing, terminal details,
+    smart seat selection, and instant booking confirmation.
+</p>
+
+<p>
+    With a focus on comfort, innovation, accessibility, and digital efficiency,
+    BoardingBridge aims to deliver a realistic next-generation airline booking
+    experience inspired by world-class aviation standards.
+</p>
+
+<div class="about-cards">
+
+    <div>
+        <h3>✈️ Global Connectivity</h3>
+
+        <p>
+            Seamless domestic and international routes connecting major cities
+            across the world.
+        </p>
+    </div>
+
+    <div>
+        <h3>💺 Smart Seat Selection</h3>
+
+        <p>
+            Interactive seat selection for Economy, Business, and First Class
+            passengers with real-time availability.
+        </p>
+    </div>
+
+    <div>
+        <h3>🛫 Real-Time Booking</h3>
+
+        <p>
+            Live schedules, instant booking confirmation, flight details,
+            and passenger-friendly travel management.
+        </p>
+    </div>
+
+</div>
+   
+</section>
+
+<!-- LOGIN PAGE -->
+
+    <section id="loginPage" class="form-box hidden">
+        <button class="back-btn" onclick="goHome()">← Back</button>
+        <h2>Login</h2>
+    
+        <input type="text"
+               id="loginEmail"
+               placeholder="Email / Username">
+    
+        <input type="password"
+               id="loginPassword"
+               placeholder="Password">
+    
+        <button onclick="loginUser()">Login</button>
+    
+    </section>
+
+    <!-- SIGNUP PAGE -->
+
+    <section id="signupPage" class="form-box hidden">
+        <button class="back-btn" onclick="goHome()">← Back</button>
+
+        <h2>Sign Up</h2>
+
+        <input type="text"
+               id="signupName"
+               placeholder="Full Name">
+
+        <input type="email"
+                    id="signupEmail"
+                    placeholder="Email">
+
+        <input type="password"
+               id="signupPassword"
+               placeholder="Password">
+
+<button onclick="signupUser()">
+    Create Account
+</button>
+
+    </section>
+
+    <!-- DASHBOARD -->
+
+    <section id="dashboardPage" class="dashboard hidden">
+
+        <div class="dashboard-header">
+
+            <h2>Welcome to BoardingBridge</h2>
+        
+            <button class="back-btn" onclick="goHome()">
+                ← Back
+            </button>
+        
+        </div>
+
+        <div class="cards">
+
+            <div class="card" onclick="showBookFlight()">
+                Book Flight
+            </div>
+
+            <div class="card" onclick="showSearchFlights()">
+                Search Flights
+            </div>
+
+            <div class="card" onclick="showMyBookings()">
+                My Bookings
+            </div>
+
+            <div class="card" onclick="showCancelBooking()">
+                Cancel Booking
+            </div>
+
+            <div class="card" onclick="showSeatMap()">
+                Seat Map
+            </div>
+
+        </div>
+
+        <!-- SMALL DASHBOARD STATS -->
+
+        <div class="dashboard-stats">
+
+            <div class="dashboard-stats">
+            
+            </div> 
+
+        </div>
+
+        <section class="why-fly">
+        
+            <h2>Why fly with us?</h2>
+        
+            <div class="why-grid">
+        
+                <div class="why-card">
+                    <div class="why-icon">✈️</div>
+                    <h3>Comfort First</h3>
+                    <p>
+                        Experience spacious seating and smooth journeys
+                        with premium onboard comfort.
+                    </p>
+                </div>
+        
+                <div class="why-card">
+                    <div class="why-icon">🏆</div>
+                    <h3>Trusted Airline</h3>
+                    <p>
+                        BoardingBridge delivers reliable schedules
+                        and world-class passenger experience.
+                    </p>
+                </div>
+        
+                <div class="why-card">
+                    <div class="why-icon">📶</div>
+                    <h3>Smart Connectivity</h3>
+                    <p>
+                        Stay connected with real-time flight tracking
+                        and seamless digital services.
+                    </p>
+                </div>
+        
+                <div class="why-card">
+                    <div class="why-icon">🌍</div>
+                    <h3>Global Destinations</h3>
+                    <p>
+                        Explore domestic and international routes
+                        across major world cities.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+        
+        </section>
+
+
+    <!-- BOOK FLIGHT PAGE -->
+
+    <section id="bookFlightPage" class="book-page hidden">
+
+        <div class="book-top">
+
+            <button onclick="showDashboard()">
+                ← Back
+            </button>
+
+            <h2>Book a Flight</h2>
+
+        </div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Flight No</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Date</th>
+                    <th>Departure</th>
+                    <th>Arrival</th>
+                    <th>Terminal</th>
+                    <th>Seats</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="flightTableBody"></tbody>
+
+        </table>
+
+        <h3 id="selectedFlightText">
+            Select a Flight
+        </h3>
+
+        <!-- CLASS DROPDOWN -->
+
+        <div class="class-select-box">
+
+            <label for="classSelect">
+                Which class do you want to fly in?
+            </label>
+
+            <select id="classSelect" onchange="createSeatMap()">
+
+                <option value="first">
+                    First Class
+                </option>
+
+                <option value="business">
+                    Business Class
+                </option>
+
+                <option value="economy">
+                    Economy Class
+                </option>
+
+            </select>
+
+        </div>
+
+        <!-- SEAT MAP -->
+
+        <div class="seat-map" id="seatMap"></div>
+
+        <button class="confirm-btn" onclick="confirmBooking()">
+            Confirm Booking
+        </button>
+
+    </section>
+
+    <!-- SEARCH FLIGHTS -->
+
+    <section id="searchFlightsPage" class="dashboard hidden">
+
+        <button onclick="showDashboard()">
+            ← Back
+        </button>
+    
+        <div class="search-card">
+    
+            <h2>Search Flights</h2>
+    
+            <p>Enter source and destination to find available flights.</p>
+    
+            <input type="text" id="fromInput" placeholder="From">
+    
+            <input type="text" id="toInput" placeholder="To">
+    
+            <button onclick="searchFlights()">
+                Search
+            </button>
+    
+        </div>
+    
+        <div id="searchResult"></div>
+    
+    </section>
+
+    <!-- MY BOOKINGS -->
+
+    <section id="myBookingsPage" class="dashboard hidden"></section>
+
+    <!-- CANCEL BOOKINGS -->
+
+    <section id="cancelBookingPage" class="dashboard hidden"></section>
+
+    <!-- SEAT MAP PAGE -->
+
+    <section id="seatMapPage" class="dashboard hidden">
+
+        <button onclick="showDashboard()">
+            ← Back
+        </button>
+
+        <h2>Seat Map</h2>
+
+        <div id="mainSeatMap"></div>
+
+    </section>
+
+    <div id="cityPopup" class="popup hidden">
+
+        <div class="popup-box">
+    
+            <h2 id="popupCityName"></h2>
+    
+            <p id="popupFlightDetails"></p>
+    
+            <button onclick="viewFlightFromPopup()">View Flight</button>
+            <button onclick="closeCityPopup()">Close</button>
+    
+        </div>
+    
+    </div>
+
+    <footer class="footer">
+        ©️ 2026 The BoardingBridge Airlines | All Rights Reserved.
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
